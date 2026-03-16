@@ -125,7 +125,7 @@ const projects = [
     title: "Enterprise Quiz System",
     description: "A comprehensive ASP.NET system for automated quiz creation, bulk Excel uploads, and multi-tier approval workflows.",
     tech: "ASP.NET • C# • MySQL • ClosedXML • Excel Interop",
-    image: "quiz.png",
+    image: "quiz2.png",
     github: "https://github.com/mohit-work/Web-Based-Quiz-Management-and-Evaluation-System",
     video: "quiz1.mp4",
     role: "Full Stack Developer",
@@ -133,11 +133,11 @@ const projects = [
     details: {
       category: "Enterprise Systems",
       challenge: "Scaling organizational assessments while maintaining a strict quality control/approval layer and handling heterogeneous bulk data uploads.",
-      summary: "For this project, I engineered a robust, role-based enterprise platform for organizational assessments using the ASP.NET framework. The system follows a strict three-tier architecture (Presentation, Application, and Data) to ensure scalability and security. A key feature I developed is the dual-layer quiz approval workflow: Admins create or bulk-upload quizzes via a custom Excel parsing engine (using ClosedXML), which then undergo a rigorous review by a BIS (Bureau of Intelligence and Security) auditor before being published. I also implemented an automated evaluation engine that computes scores and generates detailed performance analytics for participants and administrators, while ensuring restricted access through session-based role management.",
-      solution: "Architected a three-tier system leveraging ASP.NET Web Forms and MySQL. Implemented a unique BIS (Reviewer) layer for quiz approval and integrated ClosedXML for high-performance Excel parsing and bulk data ingestion.",
+      summary: "For this project, I engineered a robust, role-based enterprise platform for organizational assessments using the ASP.NET framework. The system follows a strict three-tier architecture (Presentation, Application, and Data) to ensure scalability and security. A key feature I developed is the multi-layer quiz approval workflow: Admins create or bulk-upload quizzes via a custom Excel parsing engine (using ClosedXML), which then undergo a rigorous review by a regulatory auditor before being published. I also implemented an automated evaluation engine that computes scores and generates detailed performance analytics for participants and administrators, while ensuring restricted access through session-based role management.",
+      solution: "Architected a three-tier system leveraging ASP.NET Web Forms and MySQL. Implemented a hierarchical auditor layer for quiz approval and integrated ClosedXML for high-performance Excel parsing and bulk data ingestion.",
       stats: [
         { label: "Architecture", value: "3-Tier" },
-        { label: "Approval", value: "BIS-Ready" },
+        { label: "Audit Flow", value: "Enterprise" },
         { label: "Data Engine", value: "ClosedXML" }
       ],
       visualResults: {
@@ -430,24 +430,8 @@ const App = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="col-span-1 md:col-span-1 glass-card rounded-[2.5rem] p-10 flex flex-col justify-between overflow-hidden relative group"
-            >
-              <div className="relative z-10">
-                <h4 className="text-6xl font-black text-white italic">KPMG</h4>
-                <p className="text-xs text-gray-400 font-black tracking-[0.2em] uppercase">Incoming Analyst</p>
-              </div>
-              <div className="absolute -right-8 -bottom-8 opacity-5 group-hover:opacity-20 transition-opacity duration-1000">
-                <svg className="w-40 h-40" fill="currentColor" viewBox="0 0 24 24"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="col-span-1 md:col-span-1 glass-card rounded-[2.5rem] p-10 flex flex-col justify-between"
+              className="col-span-1 md:col-span-2 glass-card rounded-[2.5rem] p-10 flex flex-col justify-between"
             >
               <h4 className="text-5xl font-black text-gradient italic">Software<br />Engineering</h4>
               <p className="text-xs text-gray-400 font-black tracking-[0.2em] uppercase">Core Strength</p>
@@ -492,9 +476,7 @@ const App = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 relative z-10">
               <div className="space-y-10">
-                <p className="text-2xl text-gray-400 font-light leading-relaxed">
                   Engineered a complex, enterprise-grade system for high-performance quiz and evaluation management.
-                </p>
                 <div className="space-y-8">
                   {[
                     "Built a scalable, role-based quiz management system with secure admin, user, and reviewer access control.",
@@ -627,7 +609,7 @@ const App = () => {
               title="Email"
               value="pitchikamohitanand@gmail.com"
               icon={<svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>}
-              href="mailto:pitchikamohitanand@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=pitchikamohitanand@gmail.com"
             />
           </div>
 
@@ -656,7 +638,7 @@ const App = () => {
                 <motion.a
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  href="mailto:pitchikamohitanand@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=pitchikamohitanand@gmail.com"
                   className="px-12 py-6 glass text-white font-black rounded-[2rem] border border-white/10 transition-all hover:bg-white/10 uppercase tracking-[0.2em] italic"
                 >
                   REQUEST BRIEF

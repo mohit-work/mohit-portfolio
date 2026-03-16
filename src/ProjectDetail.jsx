@@ -18,10 +18,10 @@ const ArchitectureMap = ({ type }) => {
         <motion.rect {...animations} x="650" y="70" width="100" height="60" rx="30" className="fill-purple-500/20 stroke-purple-500/50" />
         
         {/* Texts */}
-        <text x="110" y="105" textAnchor="middle" className="text-[10px] fill-white/50 uppercase font-bold tracking-widest">Audio In</text>
-        <text x="320" y="105" textAnchor="middle" className="text-[10px] fill-white/80 uppercase font-bold tracking-widest text-center">LLaMA2 (LoRA)</text>
-        <text x="540" y="105" textAnchor="middle" className="text-[10px] fill-white/50 uppercase font-bold tracking-widest">Logic/gTTS</text>
-        <text x="700" y="105" textAnchor="middle" className="text-[10px] fill-white/50 uppercase font-bold tracking-widest">Speech</text>
+        <text x="110" y="105" textAnchor="middle" className="text-xs fill-white/50 uppercase font-bold tracking-widest">Audio In</text>
+        <text x="320" y="105" textAnchor="middle" className="text-xs fill-white/80 uppercase font-bold tracking-widest text-center">LLaMA2 (LoRA)</text>
+        <text x="540" y="105" textAnchor="middle" className="text-xs fill-white/50 uppercase font-bold tracking-widest">Logic/gTTS</text>
+        <text x="700" y="105" textAnchor="middle" className="text-xs fill-white/50 uppercase font-bold tracking-widest">Speech</text>
         
         {/* Connectors */}
         {[170, 390, 600].map((x, i) => (
@@ -57,9 +57,9 @@ const ArchitectureMap = ({ type }) => {
          <motion.rect {...animations} x="360" y="40" width="80" height="40" rx="4" className="fill-blue-500/10 stroke-blue-500/30" />
          <motion.rect {...animations} x="620" y="40" width="80" height="40" rx="4" className="fill-white/5 stroke-white/20" />
          
-         <text x="140" y="65" textAnchor="middle" className="text-[8px] fill-white/60 uppercase font-bold">Admin</text>
-         <text x="400" y="65" textAnchor="middle" className="text-[8px] fill-white/60 uppercase font-bold">BIS (Review)</text>
-         <text x="660" y="65" textAnchor="middle" className="text-[8px] fill-white/60 uppercase font-bold">Participant</text>
+         <text x="140" y="65" textAnchor="middle" className="text-[10px] fill-white/80 uppercase font-black">Admin</text>
+         <text x="400" y="65" textAnchor="middle" className="text-[10px] fill-white/80 uppercase font-black">Auditor (Review)</text>
+         <text x="660" y="65" textAnchor="middle" className="text-[10px] fill-white/80 uppercase font-black">Participant</text>
          
          {/* Logic (Application) */}
          <motion.rect {...animations} x="200" y="110" width="400" height="40" rx="4" className="fill-white/5 stroke-white/10" />
@@ -220,7 +220,7 @@ const ProjectDetail = ({ project, onClose }) => {
             </motion.h1>
             <div className="flex flex-wrap gap-2">
               {project.tech.split("•").map((t, i) => (
-                <span key={i} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-gray-500">
+                <span key={i} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest text-white/50">
                   {t.trim()}
                 </span>
               ))}
@@ -263,7 +263,7 @@ const ProjectDetail = ({ project, onClose }) => {
                transition={{ delay: i * 0.1 }}
                className="p-8 rounded-[2rem] glass bg-white/[0.01] border-white/5"
              >
-                <p className="text-[10px] text-white/20 uppercase tracking-[0.2em] mb-4">{stat.label}</p>
+                <p className="text-xs text-white/40 uppercase tracking-[0.2em] mb-4">{stat.label}</p>
                 <p className="text-4xl font-bold tracking-tighter">{stat.value}</p>
              </motion.div>
            ))}
@@ -356,9 +356,9 @@ const ProjectDetail = ({ project, onClose }) => {
                                   <div key={tick} className="absolute h-full w-px bg-white/10" style={{ left: `${tick * 100}%` }} />
                                 ))}
                               </div>
-                            </div>
+                              </div>
                           ))}
-                          <div className="flex justify-between text-[8px] text-white/20 pt-2 uppercase font-mono">
+                          <div className="flex justify-between text-[10px] text-white/40 pt-2 uppercase font-mono font-bold">
                             <span>0.0</span>
                             <span>0.25</span>
                             <span>0.50</span>
@@ -377,17 +377,17 @@ const ProjectDetail = ({ project, onClose }) => {
                           <svg viewBox="0 0 400 200" className="w-full h-full overflow-visible">
                             {/* Y Axis */}
                             <line x1="0" y1="0" x2="0" y2="200" stroke="white" strokeOpacity="0.1" />
-                            <text x="-5" y="10" textAnchor="end" className="text-[8px] fill-white/20">6k</text>
-                            <text x="-5" y="100" textAnchor="end" className="text-[8px] fill-white/20">3k</text>
-                            <text x="-5" y="195" textAnchor="end" className="text-[8px] fill-white/20">0</text>
-                            <text x="-25" y="100" textAnchor="middle" className="text-[8px] fill-white/30 uppercase -rotate-90">Concurrent Users</text>
+                            <text x="-5" y="10" textAnchor="end" className="text-[10px] fill-white/40 font-bold">6k</text>
+                            <text x="-5" y="100" textAnchor="end" className="text-[10px] fill-white/40 font-bold">3k</text>
+                            <text x="-5" y="195" textAnchor="end" className="text-[10px] fill-white/40 font-bold">0</text>
+                            <text x="-35" y="100" textAnchor="middle" className="text-[10px] fill-white/50 uppercase font-black -rotate-90">Concurrent Users</text>
 
                             {/* X Axis */}
                             <line x1="0" y1="200" x2="400" y2="200" stroke="white" strokeOpacity="0.1" />
-                            <text x="0" y="215" textAnchor="middle" className="text-[8px] fill-white/20">0h</text>
-                            <text x="200" y="215" textAnchor="middle" className="text-[8px] fill-white/20">12h</text>
-                            <text x="400" y="215" textAnchor="middle" className="text-[8px] fill-white/20">24h</text>
-                            <text x="200" y="235" textAnchor="middle" className="text-[8px] fill-white/30 uppercase">Time Duration (24h Cycle)</text>
+                            <text x="0" y="215" textAnchor="middle" className="text-[10px] fill-white/40 font-bold">0h</text>
+                            <text x="200" y="215" textAnchor="middle" className="text-[10px] fill-white/40 font-bold">12h</text>
+                            <text x="400" y="215" textAnchor="middle" className="text-[10px] fill-white/40 font-bold">24h</text>
+                            <text x="200" y="235" textAnchor="middle" className="text-[10px] fill-white/50 uppercase font-black">Time Duration (24h Cycle)</text>
 
                             <motion.path
                               initial={{ pathLength: 0, opacity: 0 }}
@@ -425,23 +425,23 @@ const ProjectDetail = ({ project, onClose }) => {
                               
                               {/* Y Axis */}
                               <line x1="0" y1="0" x2="0" y2="200" stroke="white" strokeOpacity="0.1" />
-                              <text x="-5" y="10" textAnchor="end" className="text-[8px] fill-white/20">1.0</text>
-                              <text x="-5" y="105" textAnchor="end" className="text-[8px] fill-white/20">0.5</text>
-                              <text x="-5" y="195" textAnchor="end" className="text-[8px] fill-white/20">0.0</text>
-                              <text x="-25" y="100" textAnchor="middle" className="text-[8px] fill-white/30 uppercase -rotate-90">
-                                {project.details.visualResults.type === "simulation" ? "Fitness Score" : "Accuracy / Loss"}
-                              </text>
+                               <text x="-5" y="10" textAnchor="end" className="text-[10px] fill-white/40 font-bold">1.0</text>
+                               <text x="-5" y="105" textAnchor="end" className="text-[10px] fill-white/40 font-bold">0.5</text>
+                               <text x="-5" y="195" textAnchor="end" className="text-[10px] fill-white/40 font-bold">0.0</text>
+                               <text x="-35" y="100" textAnchor="middle" className="text-[10px] fill-white/50 uppercase font-black -rotate-90">
+                                 {project.details.visualResults.type === "simulation" ? "Fitness Score" : "Accuracy / Loss"}
+                               </text>
 
                               {/* X Axis */}
                               <line x1="0" y1="200" x2="400" y2="200" stroke="white" strokeOpacity="0.1" />
-                              <text x="0" y="215" textAnchor="middle" className="text-[8px] fill-white/20">0</text>
-                              <text x="200" y="215" textAnchor="middle" className="text-[8px] fill-white/20">
+                              <text x="0" y="215" textAnchor="middle" className="text-[10px] fill-white/40 font-bold">0</text>
+                              <text x="200" y="215" textAnchor="middle" className="text-[10px] fill-white/40 font-bold">
                                 {project.details.visualResults.type === "simulation" ? "500" : "50"}
                               </text>
-                              <text x="400" y="215" textAnchor="middle" className="text-[8px] fill-white/20">
+                              <text x="400" y="215" textAnchor="middle" className="text-[10px] fill-white/40 font-bold">
                                 {project.details.visualResults.type === "simulation" ? "1000" : "100"}
                               </text>
-                              <text x="200" y="235" textAnchor="middle" className="text-[8px] fill-white/30 uppercase">
+                              <text x="200" y="235" textAnchor="middle" className="text-[10px] fill-white/50 uppercase font-black">
                                 {project.details.visualResults.type === "simulation" ? "Generations" : "Epochs"}
                               </text>
 
@@ -485,16 +485,16 @@ const ProjectDetail = ({ project, onClose }) => {
                            <svg viewBox="0 0 400 200" className="w-full h-full overflow-visible">
                               {/* Y Axis */}
                               <line x1="0" y1="0" x2="0" y2="200" stroke="white" strokeOpacity="0.1" />
-                              <text x="-5" y="10" textAnchor="end" className="text-[8px] fill-white/20">150</text>
-                              <text x="-5" y="105" textAnchor="end" className="text-[8px] fill-white/20">75</text>
-                              <text x="-5" y="195" textAnchor="end" className="text-[8px] fill-white/20">0</text>
-                              <text x="-25" y="100" textAnchor="middle" className="text-[8px] fill-white/30 uppercase -rotate-90">Perplexity</text>
+                              <text x="-5" y="10" textAnchor="end" className="text-[10px] fill-white/40 font-bold">150</text>
+                              <text x="-5" y="105" textAnchor="end" className="text-[10px] fill-white/40 font-bold">75</text>
+                              <text x="-5" y="195" textAnchor="end" className="text-[10px] fill-white/40 font-bold">0</text>
+                              <text x="-35" y="100" textAnchor="middle" className="text-[10px] fill-white/50 uppercase font-black -rotate-90">Perplexity</text>
 
                               {/* X Axis */}
                               <line x1="0" y1="200" x2="400" y2="200" stroke="white" strokeOpacity="0.1" />
-                              <text x="0" y="215" textAnchor="middle" className="text-[8px] fill-white/20">Start</text>
-                              <text x="400" y="215" textAnchor="middle" className="text-[8px] fill-white/20">Converged</text>
-                              <text x="200" y="235" textAnchor="middle" className="text-[8px] fill-white/30 uppercase">Fine-tuning Steps</text>
+                              <text x="0" y="215" textAnchor="middle" className="text-[10px] fill-white/40 font-bold">Start</text>
+                              <text x="400" y="215" textAnchor="middle" className="text-[10px] fill-white/40 font-bold">Converged</text>
+                              <text x="200" y="235" textAnchor="middle" className="text-[10px] fill-white/50 uppercase font-black">Fine-tuning Steps</text>
 
                               <motion.path 
                                 initial={{ pathLength: 0 }}
@@ -520,9 +520,9 @@ const ProjectDetail = ({ project, onClose }) => {
                             <circle cx="100" cy="100" r="40" stroke="white" strokeOpacity="0.05" fill="none" />
                             
                             {/* Direction Labels */}
-                            <text x="100" y="10" textAnchor="middle" className="text-[6px] fill-white/20">FRONT (0°)</text>
-                            <text x="195" y="100" textAnchor="start" className="text-[6px] fill-white/20">RIGHT (90°)</text>
-                            <text x="5" y="100" textAnchor="end" className="text-[6px] fill-white/20">LEFT (-90°)</text>
+                            <text x="100" y="10" textAnchor="middle" className="text-[10px] fill-white/50 uppercase font-bold tracking-widest">FRONT (0°)</text>
+                            <text x="195" y="100" textAnchor="start" className="text-[10px] fill-white/50 uppercase font-bold tracking-widest">RIGHT (90°)</text>
+                            <text x="5" y="100" textAnchor="end" className="text-[10px] fill-white/50 uppercase font-bold tracking-widest">LEFT (-90°)</text>
 
                             {project.details.visualResults.sensorRays.map((ray, i) => (
                               <motion.line
@@ -586,8 +586,8 @@ const ProjectDetail = ({ project, onClose }) => {
                         <div className="flex-1 flex flex-col">
                           <div className="grid grid-cols-5 gap-1.5 aspect-square relative border border-white/5 p-2 bg-black/20">
                              {/* Axis Labels */}
-                             <div className="absolute -left-8 top-1/2 -translate-y-1/2 -rotate-90 text-[8px] uppercase tracking-widest text-white/20">Actual Class</div>
-                             <div className="absolute -top-6 left-1/2 -translate-x-1/2 text-[8px] uppercase tracking-widest text-white/20">Predicted Class</div>
+                             <div className="absolute -left-12 top-1/2 -translate-y-1/2 -rotate-90 text-[10px] uppercase tracking-widest text-white/50 font-black">Actual Class</div>
+                             <div className="absolute -top-8 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-widest text-white/50 font-black">Predicted Class</div>
 
                              {project.details.visualResults.confusionMatrix.map((row, i) => (
                                row.map((val, j) => (
@@ -628,23 +628,23 @@ const ProjectDetail = ({ project, onClose }) => {
             <div className="sticky top-32 space-y-8">
               {/* Project Metadata */}
               <div className="p-10 rounded-[2.5rem] glass border-white/5 bg-white/[0.02]">
-                <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white/30 mb-8">Role & Duration</h3>
+                 <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-white/50 mb-8">Role & Duration</h3>
                 <div className="space-y-6 mb-8">
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest text-purple-400 mb-1">My Role</p>
+                     <p className="text-xs uppercase tracking-widest text-purple-400 mb-1">My Role</p>
                     <p className="text-xl font-medium text-white">{project.role}</p>
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest text-purple-400 mb-1">Project Timeline</p>
+                     <p className="text-xs uppercase tracking-widest text-purple-400 mb-1">Project Timeline</p>
                     <p className="text-xl font-medium text-white">{project.duration}</p>
                   </div>
                 </div>
                 
                 <div className="pt-8 border-t border-white/5">
-                  <p className="text-[10px] uppercase tracking-widest text-white/20 mb-4">Core Competencies</p>
+                   <p className="text-xs uppercase tracking-widest text-white/40 mb-4">Core Competencies</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.split("•").map((t, i) => (
-                      <span key={i} className="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-[10px] font-medium text-gray-400 uppercase tracking-tighter">
+                       <span key={i} className="px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs font-medium text-white/40 uppercase tracking-tighter">
                         {t.trim()}
                       </span>
                     ))}
@@ -669,7 +669,7 @@ const ProjectDetail = ({ project, onClose }) => {
               <div className="p-10 rounded-[2.5rem] glass border-white/10">
                  <h3 className="text-xs font-bold uppercase tracking-widest text-white/30 mb-4">Technical Inquiry</h3>
                  <p className="text-sm text-gray-500 leading-relaxed mb-6">Interested in the implementation details or technical documentation?</p>
-                 <a href="mailto:pitchikamohitanand@gmail.com" className="block text-center py-4 rounded-xl bg-white text-black font-bold hover:bg-white/90 transition-all uppercase text-xs tracking-widest">Request Brief</a>
+                 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pitchikamohitanand@gmail.com" target="_blank" rel="noreferrer" className="block text-center py-4 rounded-xl bg-white text-black font-bold hover:bg-white/90 transition-all uppercase text-xs tracking-widest">Request Brief</a>
               </div>
             </div>
           </aside>

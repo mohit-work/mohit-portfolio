@@ -20,7 +20,7 @@ const DeveloperConsole = () => {
           response = "Languages: C++, Python, Java, JavaScript, SQL\nFrameworks: React, ASP.NET Core, PyTorch\nTools: Docker, Git, Redis";
           break;
         case "whoami":
-          response = "Mohit Anand Pitchika. Tech Analyst @ KPMG | Computer Science @ VIT. Passionate about scalable AI and high-performance systems.";
+          response = "Mohit Anand Pitchika. Software Engineer Expert | Computer Science @ VIT. Passionate about scalable AI and high-performance Cloud systems.";
           break;
         case "social":
           response = "GitHub: @Mohit-Anand-Pitchika | LinkedIn: /in/mohit-anand-pitchika";
@@ -95,18 +95,21 @@ const DeveloperConsole = () => {
       </AnimatePresence>
 
       <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
+        whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
+        whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 rounded-full glass flex items-center justify-center text-white shadow-xl hover:bg-white/10 transition-colors border border-white/20"
+        className="px-6 h-12 rounded-full glass flex items-center gap-3 text-white shadow-[0_0_20px_rgba(168,85,247,0.2)] hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-500 border border-white/20 group"
       >
         {isOpen ? (
-           <span className="text-xs font-mono">CLOSE</span>
+           <span className="text-xs font-mono font-bold tracking-widest text-purple-400">CLOSE_TERMINAL</span>
         ) : (
-          <div className="flex gap-1 items-center">
-             <div className="w-1 h-1 rounded-full bg-purple-500 animate-pulse" />
-             <span className="text-[10px] font-mono font-bold tracking-tighter">CMD</span>
-          </div>
+          <>
+            <div className="relative">
+              <div className="w-2 h-2 rounded-full bg-purple-500 animate-ping absolute inset-0" />
+              <div className="w-2 h-2 rounded-full bg-purple-500 relative" />
+            </div>
+            <span className="text-xs font-mono font-black tracking-[0.2em] group-hover:text-purple-400 transition-colors">ACCESS_CONSOLE</span>
+          </>
         )}
       </motion.button>
     </div>
